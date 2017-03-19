@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class KRAlert {
+public class KRAlert {
     
     static var okButtonTitle = "OK"
     static var cancelButtonTitle = "Cancel"

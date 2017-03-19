@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-protocol KRAlerter {
+public protocol KRAlerter {
     func alertOK(title : String?, message : String?, completion:(()->Void)?) -> Void
     func alertOKCancel(title : String?, message : String?, completion:(()->Void)?) -> Void
     func alertYesNo(title : String?, message : String?, yesCompletion : (()->Void)?, noCompletion:(()->Void)?) -> Void;
@@ -25,7 +25,7 @@ protocol KRAlerter {
     
 }
 
-extension KRAlerter where Self:UIViewController {
+public extension KRAlerter where Self:UIViewController {
     //MARK: Alerts
     func alertOK(title : String?, message : String?, completion:(()->Void)?) -> Void {
         KRAlert.alertOK(from: self, title: title, message: message, completion: completion);
