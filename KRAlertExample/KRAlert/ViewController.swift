@@ -49,13 +49,13 @@ class ViewController: UIViewController, KRAlerter {
     }
   
     @IBAction func alertWithTextFieldPressed(_ sender: Any) {
-        KRAlert.alertOKCancel(from: self, title: "Alert with text field", message: "Custom message", textFieldPlaceholder: "Password", textFieldText: nil, secureEntry: true, completion: { (text) in
+        alertOKCancel(title: "Alert with text field", message: "Custom message", textFieldPlaceholder: "Password", textFieldText: nil, secureEntry: true, completion: { (text) in
             print("Password is \(text)")
         }) { }
     }
   
     @IBAction func photoActionPressed(_ sender: Any) {
-        KRAlert.actionSheetPickPhoto(from: self, galleryCompletion: { 
+       actionSheetPickPhoto(galleryCompletion: {
             print("Gallery Pressed")
         }) { 
             print("Camera pressed")
@@ -76,7 +76,7 @@ class ViewController: UIViewController, KRAlerter {
             return UIAlertAction.init(title: name, style: .default, handler: nil)
         }
         
-        KRAlert.actionSheet(from: self, title: "Five buttons action", message: "Here is five buttons", actions: actions)
+        actionSheet(title: "Five buttons action", message: "Here is five buttons", actions: actions)
     }
     
 }
