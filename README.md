@@ -66,13 +66,13 @@ Example below can be useful for alert with textField for password from user:
 ```swift
 @IBAction func alertWithTextFieldPressed(_ sender: Any) {
     alertOKCancel(title: "Alert with text field", 
-    message: "Custom message", 
-    textFieldPlaceholder: "Password", 
-    textFieldText: nil, 
-    secureEntry: true, 
-    completion: { (text) in
-        print("Password is \(text)")
-}) { }
+                  message: "Custom message", 
+                  textFieldPlaceholder: "Password", 
+                  textFieldText: nil, 
+                  secureEntry: true, 
+                  completion: { (text) in
+                        print("Password is \(text)")
+                  }) { }
 }
 ```
 
