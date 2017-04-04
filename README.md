@@ -29,7 +29,12 @@ func alertError(message : String?, completion:(()->Void)?) //alert view with tit
 ```
 To present alert with one or two buttons with any title, message and buttons titles you can use next method:
 ```swift
-func alert(title : String?, message : String?, firstButtonTitle : String?, firstButtonCompletion: (() -> Void)?, secondButtonTitle : String?, secondButtonCompletion: (() -> Void)?)
+func alert(title : String?, 
+           message : String?,
+           firstButtonTitle : String?, 
+           firstButtonCompletion: (() -> Void)?, 
+           secondButtonTitle : String?, 
+           secondButtonCompletion: (() -> Void)?)
 ```
 
 To present alert with as many buttons as you wish use method which takes an array of UIAlertActions instances:
@@ -39,9 +44,9 @@ func alert(title : String?, message : String?, actions : [UIAlertAction]?)
 The example of alert with five buttons written below:
 ```swift
 @IBAction func fiveButtonsActionSheetPressed(_ sender: Any) {
-let names = ["One", "Two", "Three", "Four", "Five"]
-let actions : [UIAlertAction] = names.map { (name) -> UIAlertAction in
-return UIAlertAction.init(title: name, style: .default, handler: nil)
+    let names = ["One", "Two", "Three", "Four", "Five"]
+    let actions : [UIAlertAction] = names.map { (name) -> UIAlertAction in
+    return UIAlertAction.init(title: name, style: .default, handler: nil)
 }
 actionSheet(title: "Five buttons action", message: "Here is five buttons", actions: actions) // method of self
 }
@@ -54,8 +59,13 @@ func alertOKCancel(title : String?, message : String?, textFieldPlaceholder : St
 Example below can be useful for alert with textField for password from user:
 ```swift
 @IBAction func alertWithTextFieldPressed(_ sender: Any) {
-alertOKCancel(title: "Alert with text field", message: "Custom message", textFieldPlaceholder: "Password", textFieldText: nil, secureEntry: true, completion: { (text) in
-print("Password is \(text)")
+    alertOKCancel(title: "Alert with text field", 
+    message: "Custom message", 
+    textFieldPlaceholder: "Password", 
+    textFieldText: nil, 
+    secureEntry: true, 
+    completion: { (text) in
+        print("Password is \(text)")
 }) { }
 }
 ```
@@ -66,17 +76,22 @@ Methods for presenting actions sheets are similar to methods for presenting aler
 To present convenient method of action sheet for picking photo use next example:
 ```swift
 @IBAction func photoActionPressed(_ sender: Any) {
-actionSheetPickPhoto(galleryCompletion: {
-print("Gallery Pressed")
-}) { 
-print("Camera pressed")
-}
-}
+    actionSheetPickPhoto(galleryCompletion: {
+        print("Gallery Pressed")
+    }) { 
+        print("Camera pressed")
+    }
+    }
 }
 ```
 To present action sheet with one or two buttons and required button "Cancel" with any title, message and buttons titles you can use next method:
 ```swift
-func actionSheet(title : String?, message : String?, firstButtonTitle : String?, firstButtonCompletion: (() -> Void)?, secondButtonTitle : String?, secondButtonCompletion: (() -> Void)?)
+func actionSheet(title : String?, 
+                message : String?, 
+                firstButtonTitle : String?, 
+                firstButtonCompletion: (() -> Void)?, 
+                secondButtonTitle : String?, 
+                secondButtonCompletion: (() -> Void)?)
 ```
 
 To present action sheet with as many buttons as you wish use method which takes an array of UIAlertActions instances:
