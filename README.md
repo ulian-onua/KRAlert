@@ -47,14 +47,20 @@ The example of alert with five buttons written below:
     let names = ["One", "Two", "Three", "Four", "Five"]
     let actions : [UIAlertAction] = names.map { (name) -> UIAlertAction in
     return UIAlertAction.init(title: name, style: .default, handler: nil)
-}
-actionSheet(title: "Five buttons action", message: "Here is five buttons", actions: actions) // method of self
+    }
+    actionSheet(title: "Five buttons action", message: "Here is five buttons", actions: actions) // method of self
 }
 
 ```
 There is also the method to present alert with one UITextField instance and handle entered text:
 ```swift
-func alertOKCancel(title : String?, message : String?, textFieldPlaceholder : String?, textFieldText : String?, secureEntry : Bool, completion: @escaping (String?)->Void,  cancelCompletion: (()->Void)?)
+func alertOKCancel(title : String?, 
+                   message : String?, 
+                   textFieldPlaceholder : String?, 
+                   textFieldText : String?, 
+                   secureEntry : Bool, 
+                   completion: @escaping (String?)->Void,  
+                   cancelCompletion: (()->Void)?)
 ```
 Example below can be useful for alert with textField for password from user:
 ```swift
