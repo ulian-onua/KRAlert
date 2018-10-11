@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "KRAlert"
-  s.version      = "0.0.6"
+  s.version      = "0.0.7"
   s.summary      = "KRAlert is a wrapper of UIAlertController to simplify its usage in typical cases"
 
   s.homepage     = "https://github.com/ulian-onua/KRAlert"
@@ -17,14 +17,14 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
 
-  s.source       = { :git => "https://github.com/ulian-onua/KRAlert.git", :tag => "0.0.6" }
+  s.source       = { :git => "https://github.com/ulian-onua/KRAlert.git", :tag => "0.0.7" }
 
 
   s.source_files  = "Source/*.{swift}"
 #s.public_header_files = "Source/*.{swift}"
 
 s.pod_target_xcconfig = {
-    'SWIFT_VERSION' => '4.0',
+    'SWIFT_VERSION' => '4.2',
 }
 
   s.frameworks = "Foundation", "UIKit"

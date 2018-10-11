@@ -133,14 +133,14 @@ public class KRAlert {
     
     //MARK: Abstract
 
-    public class func abstractAlert(from viewController : UIViewController, title: String?, message : String?, style : UIAlertControllerStyle, actions: [UIAlertAction]?) -> Void {
+    public class func abstractAlert(from viewController : UIViewController, title: String?, message : String?, style : UIAlertController.Style, actions: [UIAlertAction]?) -> Void {
         DispatchQueue.main.async {
             let alertController = self.alertController(title: title, message: message, style: style, actions: actions)
             viewController.present(alertController, animated: true, completion: nil)
         }
     }
     
-    public class func alertController(title: String?, message : String?, style : UIAlertControllerStyle, actions: [UIAlertAction]?) -> UIAlertController {
+    public class func alertController(title: String?, message : String?, style : UIAlertController.Style, actions: [UIAlertAction]?) -> UIAlertController {
         let alertController = UIAlertController.init(title: title, message: message, preferredStyle: style)
         
         // add actions to alertController

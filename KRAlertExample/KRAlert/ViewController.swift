@@ -50,7 +50,7 @@ class ViewController: UIViewController, KRAlerter {
   
     @IBAction func alertWithTextFieldPressed(_ sender: Any) {
         alertOKCancel(title: "Alert with text field", message: "Custom message", textFieldPlaceholder: "Password", textFieldText: nil, secureEntry: true, completion: { (text) in
-            print("Password is \(text)")
+            print("Password is \(String(describing: text))")
         }) { }
     }
   
