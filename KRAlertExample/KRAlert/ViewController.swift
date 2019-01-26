@@ -10,11 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, KRAlerter {
 
-
     @IBAction func alertOkTapped(_ sender: Any) {
-//        KRAlert.alertOK(from: self, title: "ALERT OK", message: "Everything is OK") {
-//            print("OK Button pressed")
-//        }
         self.alertOK(title: "ALERT OK", message: "Everything is OK") {
             print("OK Button pressed")
         }
@@ -26,13 +22,15 @@ class ViewController: UIViewController, KRAlerter {
         }
     }
 
-
     @IBAction func alertYesNoPressed(_ sender: Any) {
-        KRAlert.alertYesNo(from: self, title: "ALERT YES NO", message: "Everything is ok", yesCompletion: { 
+        KRAlert.alertYesNo(from: self,
+                           title: "ALERT YES NO",
+                           message: "Everything is ok",
+                           yesCompletion: {
             print ("Yes button pressed")
-        }) { 
+        }, noCompletion: {
             print("No button pressed")
-        }
+        })
     }
  
     @IBAction func alertErrorPressed(_ sender: Any) {
@@ -40,6 +38,7 @@ class ViewController: UIViewController, KRAlerter {
             print("OK Pressed")
         }
     }
+    
     @IBAction func customAlertWithTwoButtonsPressed(_ sender: Any) {
         KRAlert.alert(from: self, title: "Some title", message: "Some Message", firstButtonTitle: "First Button", firstButtonCompletion: { 
             print("First Button Pressed")
@@ -49,7 +48,12 @@ class ViewController: UIViewController, KRAlerter {
     }
   
     @IBAction func alertWithTextFieldPressed(_ sender: Any) {
-        alertOKCancel(title: "Alert with text field", message: "Custom message", textFieldPlaceholder: "Password", textFieldText: nil, secureEntry: true, completion: { (text) in
+        alertOKCancel(title: "Alert with text field",
+                      message: "Custom message",
+                      textFieldPlaceholder: "Password",
+                      textFieldText: nil,
+                      secureEntry: true,
+                      completion: { (text) in
             print("Password is \(String(describing: text))")
         }) { }
     }
@@ -63,20 +67,27 @@ class ViewController: UIViewController, KRAlerter {
     }
     
     @IBAction func customActionSheet(_ sender: Any) {
-        KRAlert.actionSheet(from: self, title: "Some action sheet", message: "Some message", firstButtonTitle: "First button title", firstButtonCompletion: { 
+        KRAlert.actionSheet(from: self,
+                            title: "Some action sheet",
+                            message: "Some message",
+                            firstButtonTitle: "First button title",
+                            firstButtonCompletion: {
             print("First button pressed")
         }, secondButtonTitle: "Second button title") { 
             print ("Second button pressed")
         }
     }
+    
     @IBAction func fiveButtonsActionSheetPressed(_ sender: Any) {
         let names = ["One", "Two", "Three", "Four", "Five"]
         
-        let actions : [UIAlertAction] = names.map { (name) -> UIAlertAction in
-            return UIAlertAction.init(title: name, style: .default, handler: nil)
+        let actions: [UIAlertAction] = names.map { (name) -> UIAlertAction in
+            return UIAlertAction(title: name, style: .default, handler: nil)
         }
         
-        actionSheet(title: "Five buttons action", message: "Here is five buttons", actions: actions)
+        actionSheet(title: "Five buttons action",
+                    message: "Here is five buttons",
+                    actions: actions)
     }
     
 }
